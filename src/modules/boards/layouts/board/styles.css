@@ -1,0 +1,12 @@
+.board {
+  width: 1400px;
+  height: 70vh;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 15vh auto;
+  align-items: center;
+  border-radius: 10px;
+  justify-content: space-around;
+  border: 2px solid rgb(107, 23, 23);
+}
