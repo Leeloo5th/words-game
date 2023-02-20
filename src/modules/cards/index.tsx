@@ -1,9 +1,9 @@
 import "./styles.css";
 
-export const Card = () => {
+export const Card = ({ title = "", ...p }) => {
   return (
-    <section className="card">
-      <h1>Word</h1>
+    <section className="card" {...p}>
+      <h1>{title}</h1>
     </section>
   );
 };
