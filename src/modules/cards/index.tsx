@@ -1,9 +1,19 @@
 import { useState } from "react";
+import { shuffle } from "../../shared/utils/shuffle";
 
 import "./styles.css";
 
-export const Card = ({ title = "", ...p }) => {
+export const Card = ({ title = "", index = 0, ...p }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  const colors = [
+    ...new Array(9).fill("green"),
+    ...new Array(8).fill("red"),
+    ...new Array(7).fill("white"),
+    "black",
+  ];
+
+  const shuffledColors = shuffle(colors);
 
   const handleClick = () => {
     setIsFlipped(true);
@@ -23,7 +33,10 @@ export const Card = ({ title = "", ...p }) => {
         <div
           className="card mirror-card"
           {...p}
-          style={{ ...styles(!isFlipped), backgroundColor: "red" }}
+          style={{
+            ...styles(!isFlipped),
+            backgroundColor: shuffledColors[index],
+          }}
         >
           <h1>{title}</h1>
         </div>

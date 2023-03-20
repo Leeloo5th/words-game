@@ -10,7 +10,7 @@ export const Board = () => {
   return (
     <section className="board">
       {words.slice(0, 25).map((word, i) => (
-        <Card title={word} key={i} />
+        <Card title={word} key={i} index={i} />
       ))}
     </section>
   );
